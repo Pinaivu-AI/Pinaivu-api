@@ -64,7 +64,7 @@ app.post("/v1/chat/completions", { preHandler: requireKey }, async (req: any, re
   // "no cap" sentinel) that JS's Number type can't round-trip exactly —
   // re-serializing a parsed copy silently corrupts them past u64::MAX,
   // which the node then rejects outright.
-  let requestId = randomUUID();
+  let requestId: string = randomUUID();
   try {
     const parsed = JSON.parse(text) as Record<string, unknown>;
     if (typeof parsed.request_id === "string") requestId = parsed.request_id;
