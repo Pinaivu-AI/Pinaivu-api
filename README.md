@@ -1,6 +1,13 @@
 # Pinaivu API Platform
 
-API gateway + developer dashboard for the Pinaivu decentralized inference network.
+API gateway + developer dashboard for Pinaivu's decentralized inference
+network. This is the stateless developer-facing surface: per-key auth,
+rate limiting, usage tracking, and a proxy to the coordinator. It does
+not hold a memory layer or run inside an enclave — for the attested,
+memory-aware chat product see
+[`Pinaivu-AI/relayer`](https://github.com/Pinaivu-AI/relayer). See the
+[architecture overview](https://docs.pinaivu.com/architecture/overview)
+for how the gateway, coordinator, and node mesh fit together.
 
 ## Architecture
 
